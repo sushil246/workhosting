@@ -22,14 +22,15 @@ cd <repo-folder>
 - Option A: Upload `RAG_Colab_Notebook.ipynb` in Colab (File -> Upload notebook).
 - Option B: Use Colab's GitHub integration: `https://colab.research.google.com/github/<owner>/<repo>/blob/main/RAG_Colab_Notebook.ipynb`
 
-3. Run the first cell to install dependencies. If you want to use Ollama locally inside the Colab VM, click the "Install & Run Ollama" button in the UI (this may or may not succeed depending on the Colab environment). For most users, choose the OpenAI backend.
+3. Run the first cell to install dependencies. This notebook now uses an inline OpenAI key variable in Cell 1.
 
-4. In the Configuration panel, set Backend to `OpenAI (Cloud)` and paste your OpenAI API key into the `OpenAI Key` field, or choose `Ollama (Local)` if you have Ollama running.
+4. Open `RAG_Colab_Notebook.ipynb` in Colab, edit Cell 1 to set the `OPENAI_API_KEY` value to your OpenAI API key (replace the empty string), then run Cell 1 and Cell 2 in order.
 
 5. Upload a PDF, choose a domain, then click `Ask` or `Generate Summary`.
 
-.env usage (optional):
-- The notebook writes a `.env` file automatically, but you can create one yourself from `.env.example` and edit keys locally.
+Note on secrets:
+- This notebook stores the OpenAI key inline in Cell 1 for simplicity when running in Colab. Do not commit your key to a public repository.
+- For production usage, prefer managing secrets via environment variables or secret managers instead of inline keys.
 
 Push to GitHub (if you want to check in from your machine):
 

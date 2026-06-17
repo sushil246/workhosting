@@ -2,7 +2,6 @@ pypdf
 langchain
 langchain-community
 langchain-openai
-python-dotenv
 chromadb
 ipywidgets
 sentence-transformers
